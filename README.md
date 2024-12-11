@@ -8,7 +8,6 @@ Go powered bookmark manager
 -   Login
 -   Home
     -   Display nested bookmarks
-    -   Add group
 
 ### Data Base
 
@@ -17,8 +16,12 @@ Go powered bookmark manager
 -   Users
 -   Bookmarks
 
-### Problem Features
+### Functionality ToDo
 
--   UI Design
--   Storing Bookmark data in DB
-    -   Blob storage
+-   Retrieve a bookmark file, requires:
+    -   DB creation with blob storage
+    -   DB Model
+    -   JSON Design
+    -   Handler update
+-   Show nested bookmarks, requires
+    -   complex go template rendering

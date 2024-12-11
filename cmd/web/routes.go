@@ -1,18 +1,26 @@
 package main
 
-import "net/http"
+import (
+	"net/http"
 
-func (app *application) routes() *http.ServeMux {
-	mux := http.NewServeMux()
+	"github.com/bmizerany/pat"
+	"github.com/justinas/alice"
+)
 
-	// Middleware
+func (app *application) routes() http.Handler {
+	standardMiddleware := alice.New(app.recoverPanic, app.logRequest, secureHeaders)
+	dynamicMiddleware := alice.New(app.session.Enable, app.noSurf)
 
-	// Pages
-	mux.Handle("/", http.HandlerFunc(app.home))
+	mux := pat.New()
 
-	// Static Files
-	fileServer := http.FileServer(http.Dir("./ui/static/"))
-	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
+	// Bookmarks
+	mux.Get("/", dynamicMiddleware.ThenFunc(app.home))
 
-	return mux
+	// Static files
+	fileServer := http.FileServer(http.Dir("./ui/static"))
+	mux.Get("/static/", http.StripPrefix("/static", fileServer))
+
+	mux.Get("/about", dynamicMiddleware.ThenFunc(app.about))
+
+	return standardMiddleware.Then(mux)
 }
