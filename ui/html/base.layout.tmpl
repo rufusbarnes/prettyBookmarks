@@ -6,9 +6,7 @@
          <link href='https://fonts.googleapis.com/css?family=JetBrains Mono' rel='stylesheet'>
     </head>
     <body>
-        <nav>
-            <a href="/">prettyBookmarks</a>
-        </nav>
+        {{ template "nav" . }}
         <section>
             {{ template "body" . }}
         </section>

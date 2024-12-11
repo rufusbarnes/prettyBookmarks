@@ -88,8 +88,14 @@ nav {
     padding-top: 17px;
     padding-bottom: 15px;
     background: var(--black);
-    height: 60px;
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .home-logo {
+    font-size: 25px;
 }
 
 nav a {
@@ -100,11 +106,6 @@ nav a {
 nav form {
     display: inline-block;
     margin-left: 1.5em;
-}
-
-nav div {
-    width: 50%;
-    float: left;
 }
 
 nav div:last-child {
