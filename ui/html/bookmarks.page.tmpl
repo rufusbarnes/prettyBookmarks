@@ -1,0 +1,24 @@
+{{ template "base" .}}
+{{ define "body" }}
+    <section id="bookmarks"></section>
+        <div id="match-box" class="match-box">
+            <div class="name-container">
+                <img id="match-box-favicon" class="favicon"></img>
+                <div id="match-box-name" class="name"></div>
+            </div>
+            <div id="match-box-url" class="url"></div>
+        </div>
+    </section>
+{{ end }}
+
+{{ define "styles" }}
+    <link rel="stylesheet" href="/static/css/bookmark-tree.css" />
+{{ end }}
+
+{{ define "scripts" }}
+    <script src="/static/scripts/globals.js"></script>
+    <script src="/static/scripts/state.js"></script>
+    <script src="/static/scripts/models.js"></script>
+    <script src="/static/scripts/dom.js"></script>
+    <script src="/static/scripts/main.js"></script>
+{{ end }}

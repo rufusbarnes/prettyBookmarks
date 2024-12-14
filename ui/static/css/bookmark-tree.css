@@ -1,0 +1,123 @@
+#bookmarks {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#bookmarks .folder {
+    flex-grow: 1;
+    padding: 10px;
+    color: var(--text-color);
+}
+
+#bookmarks .folder:not(.root) {
+    background-color: var(--folder-color);
+}
+
+#bookmarks .root > .folder-name {
+    font-size: 20px;
+}
+
+#bookmarks a {
+    color: var(--text-color);
+}
+
+#bookmarks .url {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    padding: 10px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+#bookmarks .favicon {
+    width: 16px;
+    scale: 1;
+    margin-right: 4px
+}
+
+#bookmarks .url a {
+    color: var(--text-color);
+}
+
+#bookmarks .url:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#bookmarks .folder-name {
+    color: var(--text-color);
+    background-color: rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    padding: 4px;
+    border-radius: 4px 4px 0 0;
+}
+
+#bookmarks .folder-content {
+    display: flex;
+    flex-direction: row;
+}
+
+#bookmarks .folder-content.urls {
+    flex-direction: column;
+}
+
+.searching #bookmarks .url:not(.candidate-match) {
+    opacity: 0.2;
+}
+
+.searching #bookmarks .url.candidate-match {
+    background-color: black;
+    color: white;
+}
+
+.single-match #bookmarks .url.candidate-match {
+    opacity: 0%;
+}
+
+.match-box .favicon {
+    height: 32px;
+    scale: 1;
+    margin: 10px;
+}
+
+.match-box .name-container {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    margin: auto;
+}
+
+.match-box .name {
+    background-color: white;
+}
+
+.match-box .url {
+    font-size: 20px;
+}
+
+.match-box {
+    position: fixed;
+    background-color: white;
+    opacity: 0%;
+    font-size: 10px;
+    transition: 0.4s;
+    padding: 0px;
+    font-size: 2px;
+    text-align: center;
+}
+
+.single-match .match-box {
+    padding: 20px;
+    opacity: 100%;
+    width: fit-content !important;
+}
+
+.single-match .match-box .name {
+    font-size: 30px;
+}
+
+.single-match .match-box .url {
+    font-size: 18px;
+}

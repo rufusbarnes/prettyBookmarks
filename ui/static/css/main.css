@@ -1,131 +1,41 @@
-:root {
-    --black: #0A0908;
-    --gray: #394053;
-    --red: #DD1C1A;
-    --pink: #DB2763;
-    --orange: #DB5461;
-    --yellow: #F0C808;
-    --green: #0CA4A5;
-    --dark-blue: #1C5D99;
-    --blue: #3D52D5;
-    --indigo: #4C0827;
-    --violet: #533A71;
-}
-
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-size: 18px;
-    font-family: "Jetbrains Mono", monospace;
-}
-
-html, body {
-    height: 100%;
+    font-family: "JetBrains Mono";
 }
 
 body {
-    line-height: 1.5;
-    background-color: var(--black);
-    color: white;
-    overflow-y: scroll;
+    margin: 0;
+    background-color: var(--background-color);
 }
 
-nav, section, footer {
-    padding: 2px 50px 0;
+#header {
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    z-index: 1;
 }
 
-section {
-    margin-top: 54px;
-    margin-bottom: 54px;
-    min-height: calc(100vh - 345px);
-    overflow: auto;
-}
-
-h1 a {
-    font-size: 36px;
-    font-weight: bold;
-    background-repeat: no-repeat;
-    background-position: 0px 0px;
-    height: 36px;
-    padding-left: 50px;
-    position: relative;
-}
-
-h1 a:hover {
-    text-decoration: none;
-    color: white;
-}
-
-h2 {
-    font-size: 22px;
-    margin-bottom: 36px;
-    position: relative;
-    top: -9px;
-}
-
-h3 {
-    font-size: 22px;
-    margin-bottom: 16px;
-}
-
-.center-text {
+nav,
+header {
+    margin: 0;
+    padding: 3px 50px;
     text-align: center;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-
-a:hover {
-    color: rgb(200, 200, 200);
-    text-decoration: underline;
-}
-
-nav {
-    border-bottom: 1px solid #E4E5E7;
-    padding-top: 17px;
-    padding-bottom: 15px;
-    background: var(--black);
-    color: white;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-nav .home-logo {
-    font-size: 25px;
+nav * {
+    flex: 1;
+}
+
+header {
+    font-size: 30px;
 }
 
 nav a {
-    margin-right: 1.5em;
-    display: inline-block;
+    color: var(--text-color);
 }
 
-nav form {
-    display: inline-block;
-    margin-left: 1.5em;
-}
-
-nav div:last-child {
-    text-align: right;
-}
-
-nav div:last-child a {
-    margin-left: 1.5em;
-    margin-right: 0;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid #E4E5E7;
-    padding-top: 17px;
-    padding-bottom: 15px;
-    background: var(--black);;
-    height: 60px;
-    color: white;
-    text-align: center;
+nav {
+    display: flex;
+    justify-content: space-between;
 }

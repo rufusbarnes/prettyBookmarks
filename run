@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+addr=":4091"
+dsn="web:@/prettybookmarks?parseTime=true"
+
+setopt extended_glob
+go run cmd/web/^*test.go -dsn="web:@/prettybookmarks?parseTime=true" -addr=":4091"
+unsetopt extended_glob

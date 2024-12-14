@@ -9,7 +9,7 @@ import (
 
 func secureHeaders(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Content-Security-Policy", "frame-ancestors: none;")
+		w.Header().Set("Content-Security-Policy", "frame-ancestors 'none'")
 
 		next.ServeHTTP(w, r)
 	})
